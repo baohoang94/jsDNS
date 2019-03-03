@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>làm việc với chuỗi trong jacvascript</title>
+</head>
+<body>
+	<div id="product"></div>
+	<script>
+		// ép kiểu sang chuỗi thì dùng phương thức .toString();
+		var my_string = 'Học JavaScript cơ bản và JavaScript nâng cao';
+		// tìm kiếm chuỗi
+		var index1 = my_string.indexOf('Java');
+		console.log(index1);
+		// biến index1 trả về thứ tự của chữ đầu tiên xuất hiện trong chuỗi, nếu ko tìm thấy trả về -1
+		// tìm kiếm chuỗi từ cuối
+		var index2 = my_string.lastIndexOf('Java');
+		console.log(index2);
+		// cắt chuỗi
+		// nếu ko truyền tham số thứ 2 nó sẽ cắt hết chuỗi
+		var cut_string = my_string.slice(4,14);
+		var cut_string = my_string.substring(4,14);
+		var cut_string = my_string.substr(4,14);
+		console.log(cut_string);
+		// thay thế chuỗi
+		var replace_string = my_string.replace('JavaScript','PHP');
+		var replace_string = my_string.replace(my_string[0],'h');
+		console.log(replace_string);
+		// chuyển thành chữ in hoa
+		console.log(my_string.toUpperCase());
+		// chuyển thành chữ thường
+		console.log(my_string.toLowerCase());
+		// tách chuỗi thành mảng
+		var my_array = my_string.split(' ');
+		console.log(my_array);
+		// kiểu đối tượng
+		var my_profile = {
+			name: 'Van Bao Hoàng',
+			age: 25,
+			address: '254 Minh Khai'
+		}
+		console.log(my_profile);
+		alert(my_profile['name']);
+		alert(my_profile.address);
+		// mảng đối tượng
+		var product = [
+			{
+				name: 'Chuột',
+				price: 12000
+			},
+			{
+				name: 'Bàn phím',
+				price: 10000
+			},
+			{
+				name: 'Màn hình',
+				price: 19000
+			}
+		];
+		console.log(product);
+		var html = '<ul>';
+		for (var i = 0; i < product.length; i++) {
+			html += '<li>' + product[i].name + ': ' + product[i].price + '</li>';
+		}
+		html += '</ul>';
+		var product_tag = document.getElementById('product');
+		product_tag[0].innerHTML = html;
+	</script>
+</body>
+</html>

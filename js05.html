@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Các phương thức của array</title>
+</head>
+<body>
+	<script>
+		var myArray = ['HTML', 'CSS', 'JavaScript', 'PHP', 'MySql', 'MongoDB'];
+		// xóa 2 phần tử cuối
+		// myArray.length = 4;
+		// hàm nối thêm phần tử vào cuối mảng
+		myArray.push('Jquery', 'Bootstrap');
+		// hàm nối thêm phần tử vào đầu mảng
+		myArray.unshift('WordPress', 'Laravel');
+		// hàm xóa phần tử cuối mảng
+		myArray.pop();
+		// hàm xóa phần tử đầu mảng
+		myArray.shift();
+		// Hàm chèn thêm phần tử vào 1 vị trí trong mảng(tham số thứ 1 là vị trí muốn chèn, tham số thứ 2 là số phần tử đằng sau bị xóa, thứ 3 là phần tử muốn chèn)
+		myArray.splice(2, 0, 'NodeJs');
+		// Hàm tìm phần tử trong mảng (trả về vị trí của phần tử đó)
+		var myIndex = myArray.indexOf('PHP');
+		console.log(myIndex);
+		var newArray = ['CakePHP', 'AngularJs', 'ReactJs'];
+
+		// Nối mảng thành chuỗi truyền vào dấu ngăn cách trong hàm join(), nếu ko truyền thì tham số mặc định là dấu ,
+		document.write('<h1>' + myArray.join(' - ') + '</h1>');
+		// Hàm nối 2 array
+		var myArray2 = myArray.concat(newArray);
+		document.write(myArray2);
+		// Hàm lấy 1 số phần tử trong mảng
+		var myArray3 = myArray.slice(4, 6);
+		document.write('<h2>' + myArray3 + '</h2>');
+		// Hàm sắp xếp mảng
+		myArray.sort();
+		document.write(myArray);
+		// Hàm đảo ngược mảng
+		myArray.reverse();
+		document.write('<h1>' + myArray.join(' - ') + '</h1>');
+	</script>
+</body>
+</html>

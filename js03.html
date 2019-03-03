@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js 03 array</title>
+</head>
+<body>
+	<select id="selectCity">
+	</select>
+	<script>
+		var listCity = ['Hà Nội', 'Đà Nẵng', 'TP.HCM', 'Cà Mau'];
+		var optionCity = '';
+		var optionHtml = document.getElementById('selectCity');
+		// for (var i = 0; i < listCity.length; i++) {
+		// 	optionCity += '<option>' + listCity[i] + '</option>';
+		// }
+
+		// dùng vòng lặp while
+		var i = 0;
+		while(i < listCity.length) {
+			optionCity += '<option>' + listCity[i] + '</option>';
+			i++;
+		}
+		optionHtml.innerHTML = optionCity;
+	</script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Các phương thức của array</title>
+</head>
+<body>
+	<style>
+		#student-data li {
+		    list-style: none;
+		    font-size: 22px;
+		    border: 1px solid;
+		    padding: 10px;
+		    float: left;
+		    margin-left: 5px;
+		}
+	</style>
+	<script>
+		var students = [];
+		// Hàm render
+		function renderView(){
+			var html = '';
+			for (var i = 0; i < students.length; i++) {
+				html += '<li><h3>ID: ' + (i+1) + '</h3>';
+				html += '<h3> Name: ' + students[i].name + '</h3>';
+				html += '<p>Age: ' + students[i].age + '</p>';
+				html += '<p>Address: ' + students[i].address + '</p>';
+				html += '<button onclick="deleteStudent('+i+')">Delete</button>';
+				html += '</li>';
+			}
+			var student_element = document.getElementById('student-data');
+			student_element.innerHTML = html;
+		}
+		function deleteStudent(student_index) {
+			students.splice(student_index, 1);
+			renderView();
+		}
+		// Khi tài liệu sẵn sàng
+		document.addEventListener('DOMContentLoaded', function() {
+			// lấy phần tử button
+			var submit_element = document.getElementById('submit');
+			// Khi button đc click
+			submit_element.addEventListener('click', function() {
+				var student_name = document.getElementById('name').value;
+				var student_age = document.getElementById('age').value;
+				var student_address = document.getElementById('address').value;
+				var student_object = {
+					name: student_name,
+					age: student_age,
+					address: student_address
+				}
+				students.push(student_object);
+				renderView();
+			});
+			// renderView
+			renderView();
+		});
+	</script>
+	<div>
+		<div>
+			<input type="text" name="" id="name" value="" placeholder="Enter your name">
+			<input type="text" name="" id="age" value="" placeholder="Enter your age">
+			<input type="text" name="" id="address" value="" placeholder="Enter your address">
+			<button type="" id="submit">Create</button>
+		</div>
+		<ul id="student-data">
+			
+		</ul>
+	</div>
+</body>
+</html>
